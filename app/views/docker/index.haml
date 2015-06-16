@@ -1,0 +1,14 @@
+#status
+  %h2
+    Contenedores
+  .container-length
+    %h3
+      active
+    #{ @resumen[:containers][:active] }
+    %h3
+      stopped
+    #{ @resumen[:containers][:stopped] }
+  %h2
+    Images
+  .images-length
+    #{ @resumen[:images] }

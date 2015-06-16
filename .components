@@ -1,0 +1,9 @@
+---
+:orm: none
+:test: riot
+:mock: mocha
+:script: jquery
+:renderer: haml
+:stylesheet: sass
+:namespace: Estibador
+:migration_format: number

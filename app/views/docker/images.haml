@@ -1,0 +1,14 @@
+.image
+  %table
+    - @images.each do | image |
+      %tr
+        %td
+          %a{:href => "images/#{ image[:id] }"} #{ image[:id] }
+        %td.created
+          #{ image[:date] }
+        %td.size
+          #{ image[:size] }
+        %td.tags
+          %ul
+            - image[:tags].each do | tag |
+              %li #{ tag }
