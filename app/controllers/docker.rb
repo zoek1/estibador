@@ -48,4 +48,18 @@ Estibador::App.controllers :docker do
 
     render 'docker/images'
   end
+
+  get :containers do
+    @containers = []
+
+    Docker::Container.all(:all => true).each do |container|
+      @containers.push({
+        :id => container.id.slice(0, 10),
+        :date => Time.at(container.info["Created"]).httpdate,
+        :status => container.info["Status"]
+      })
+    end
+
+    render 'docker/containers'
+  end
 end

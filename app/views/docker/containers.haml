@@ -1,0 +1,10 @@
+.container
+  %table
+    - @containers.each do | container |
+      %tr
+        %td
+          %a{:href => "containers/#{ container[:id]}"} #{ container[:id]}
+        %td.created
+          #{ container[:date] }
+        %td.status
+          #{ container[:status] }
